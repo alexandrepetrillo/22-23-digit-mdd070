@@ -1,4 +1,4 @@
-package composite.fichier.sans_pattern;
+package composite.fichier.avec_pattern;
 
 public class Client {
 
@@ -12,18 +12,18 @@ public class Client {
         Dossier dossierRoot = new Dossier();
         Dossier dossier1 = new Dossier();
         Dossier dossier2 = new Dossier();
-        Dossier dossier3= new Dossier();
+        Dossier dossier3 = new Dossier();
 
-        dossierRoot.addSousDossier(dossier1);
-        dossierRoot.addSousDossier(dossier2);
-        dossier2.addSousDossier(dossier3);
+        dossierRoot.add(dossier1);
+        dossierRoot.add(dossier2);
+        dossier2.add(dossier3);
 
-        dossier1.addFichier(fichier1);
-        dossier2.addFichier(fichier2);
-        dossier3.addFichier(fichier3);
-        dossier3.addFichier(fichier4);
-        dossier3.addFichier(fichier5);
+        dossier1.add(fichier1);
+        dossier2.add(fichier2);
+        dossier3.add(fichier3);
+        dossier3.add(fichier4);
+        dossier3.add(fichier5);
 
-        System.out.println(dossierRoot.calculerTailleTotale());
+        System.out.println(dossierRoot.calculerTaille());
     }
 }
