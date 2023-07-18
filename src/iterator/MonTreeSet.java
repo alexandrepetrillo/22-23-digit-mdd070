@@ -1,6 +1,6 @@
-package iterator.monarraylist;
+package iterator;
 
-public class MonTreeSet {
+public class MonTreeSet implements  Iterable{
 
     private Arbre arbre;
 
@@ -23,6 +23,11 @@ public class MonTreeSet {
 
     public Arbre getArbre() {
         return arbre;
+    }
+
+    public Iterator iterator() {
+        //TODO
+        return null;
     }
 
     public static class Arbre {

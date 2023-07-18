@@ -1,6 +1,6 @@
-package iterator.monarraylist;
+package iterator;
 
-public class MonArrayList {
+public class MonArrayList implements Iterable {
 
     private String[] array = new String[10];
     private int size = 0;
@@ -23,5 +23,14 @@ public class MonArrayList {
 
     public String get(int i) {
         return array[i];
+    }
+
+    public String[] getArray() {
+        return array;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new MonArrayListIterator(array, size);
     }
 }

@@ -1,9 +1,9 @@
-package iterator.monarraylist;
+package iterator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import iterator.monarraylist.MonTreeSet.Arbre;
+import iterator.MonTreeSet.Arbre;
 
 public class MonTreeSetClient {
 
@@ -24,7 +24,7 @@ public class MonTreeSetClient {
 
         System.out.println(montTreeSet.size());
 
-        // itération
+        // itération diffile sans design pattern iterator
         List<Arbre> arbres = new ArrayList<>();
         arbres.add(montTreeSet.getArbre());
         while (!arbres.isEmpty()) {
@@ -35,5 +35,13 @@ public class MonTreeSetClient {
                 arbres.add(arbre.getDroit());
             }
         }
+
+        Iterator iterator = montTreeSet.iterator();
+        while(iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
+        }
+
+
     }
 }

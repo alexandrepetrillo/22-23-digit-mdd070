@@ -1,4 +1,4 @@
-package iterator.monarraylist;
+package iterator;
 
 public class MonArrayListClient {
 
@@ -21,9 +21,15 @@ public class MonArrayListClient {
         System.out.println(monArrayList.size());
         System.out.println(monArrayList.get(5));
 
-        // itération
+        // itération facile même sans design pattern iterator
         for (int i = 0; i < monArrayList.size(); i++) {
-            System.out.println(monArrayList.get(i));
+            System.out.println(monArrayList.getArray()[i]);
+        }
+
+        Iterator iterator = monArrayList.iterator();
+        while(iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
         }
 
     }
