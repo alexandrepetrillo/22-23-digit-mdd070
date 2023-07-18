@@ -24,6 +24,7 @@ public class MonTreeSetClient {
 
         System.out.println(montTreeSet.size());
 
+        System.out.println("Parcours sans iterator");
         // itération diffile sans design pattern iterator
         List<Arbre> arbres = new ArrayList<>();
         arbres.add(montTreeSet.getArbre());
@@ -36,8 +37,9 @@ public class MonTreeSetClient {
             }
         }
 
+        System.out.println("Parcours avec iterator");
         Iterator iterator = montTreeSet.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             String element = iterator.next();
             System.out.println(element);
         }

@@ -1,6 +1,10 @@
 package iterator;
 
-public class MonTreeSet implements  Iterable{
+import java.util.ArrayList;
+import java.util.List;
+import javax.lang.model.type.ArrayType;
+
+public class MonTreeSet implements Iterable {
 
     private Arbre arbre;
 
@@ -26,8 +30,7 @@ public class MonTreeSet implements  Iterable{
     }
 
     public Iterator iterator() {
-        //TODO
-        return null;
+        return new MonTreeSetIterator(arbre);
     }
 
     public static class Arbre {
@@ -68,8 +71,32 @@ public class MonTreeSet implements  Iterable{
         public Arbre getGauche() {
             return gauche;
         }
+
         public Arbre getDroit() {
             return droit;
+        }
+    }
+
+    private class MonTreeSetIterator implements Iterator {
+        private List<Arbre> arbresATraiter = new ArrayList<>();
+
+        MonTreeSetIterator(Arbre arbre) {
+            arbresATraiter.add(arbre);
+        }
+        @Override
+        public boolean hasNext() {
+            return !arbresATraiter.isEmpty();
+        }
+        @Override
+        public String next() {
+            Arbre arbre = arbresATraiter.remove(0);
+            if (arbre.getGauche() != null) {
+                arbresATraiter.add(arbre.getGauche());
+            }
+            if (arbre.getDroit() != null) {
+                arbresATraiter.add(arbre.getDroit());
+            }
+            return arbre.valeur;
         }
     }
 }

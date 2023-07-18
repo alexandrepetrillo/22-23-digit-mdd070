@@ -21,5 +21,7 @@ public class MaLinkedListClient {
         System.out.println(maLinkedList.size());
         System.out.println(maLinkedList.get(5));
 
+
+
     }
 }

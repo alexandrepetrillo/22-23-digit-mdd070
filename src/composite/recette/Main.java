@@ -46,22 +46,7 @@ public class Main {
     // TODO a compléter !
     private static double calculerPrixRecette(Recette recette) {
         double prixTotal = 0;
-
-        // Prix des ingredients
-        Set<Ingredient> tousSesIngredientsDirects = recette.getIngredients().keySet();
-        for (Ingredient ingredient : tousSesIngredientsDirects) {
-            Double quantite = recette.getIngredients().get(ingredient);
-            // TODO
-        }
-
-        // Prix des sous recettes
-        Set<Recette> tousSesSousRecettesDirects = recette.getSousRecettes().keySet();
-        for (Recette sousRecette : tousSesSousRecettesDirects) {
-            Double quantite = recette.getSousRecettes().get(sousRecette);
-            double prixUnitaireDeLaSousRecette = calculerPrixRecette(sousRecette);
-        }
-
-        //...
+        //...TODO
         return prixTotal;
     }
 }
